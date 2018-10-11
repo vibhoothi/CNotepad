@@ -135,3 +135,21 @@ void getmousepos(int &xpos,int &ypos,int &cl)
     xpos=o.x.cx;
     ypos=o.x.dx;
 }
+
+void main()
+
+{
+    int flag=0;
+    notepad n;
+    fstream f,f1;
+    intro();
+    n.draw();
+    int x,y,cl=0;
+    file s;
+    while(1)
+
+    {
+
+  }
+
+}
