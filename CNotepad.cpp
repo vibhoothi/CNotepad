@@ -216,6 +216,44 @@ void main()
 	    outtextxy(46,76,"OPEN");
 	    outtextxy(46,86,"ADD");
 	}
+	if((x>=121&&x<=199)&&(y>=63&&y<=68)&&(cl==1)&&(flag==3))
+
+	{
+	    closegraph();
+	    n.draw();
+	    outtextxy(63,140,"1. VIBHOOTHI");
+	}
+	if((x>=121&&x<=157)&&(y>=72&&y<=79)&&(cl==1)&&(flag==3))
+
+	{
+	    closegraph();
+	    n.draw();
+	    outtextxy(100,100,"NOTEPAD++");
+	}
+	if((x>=121&&x<=149)&&(y>=81&&y<=87)&&(cl==1)&&(flag==3))
+
+	{
+	    closegraph();
+	    n.draw();
+	    outtextxy(60,81,"The bugs include:");
+	    outtextxy(60,90,"1. The user can enter entire range but");
+	    outtextxy(60,99,"  cannot restrict to the defined region. ");
+	    outtextxy(60,108,"2. The input is in text mode and may cause");
+	    outtextxy(60,117,"  problems.");
+	    outtextxy(60,126,"3. The output file is suppose at 65 and");
+	    outtextxy(60,135,"  ends at 85 then again opened output ");
+	    outtextxy(60,144,"  then it would start from 85.");
+	    outtextxy(60,153,"4. The output of text is not intelligent");
+	    outtextxy(60,162,"  to detect words.");
+	    outtextxy(60,171,"5. The no of words lines letters output");
+	    outtextxy(60,180,"  is in text mode.");
+	    outtextxy(60,189,"6. The output screen will have some black");
+	    outtextxy(60,198,"  spots or the graphics part may be like ");
+	    outtextxy(60,207,"  erased if mouse cursor is dragged from ");
+	    outtextxy(60,216,"  one place to  another so creating a");
+	    outtextxy(60,225,"  ugly look.");
+
+	}
 
   }
 
