@@ -109,3 +109,29 @@ class notepad
     }
 
 
+void restrictmouseptr(int x1,int y1,int x2,int y2)
+
+{
+    i.x.ax=7;
+    i.x.cx=x1;
+    i.x.dx=x2;
+    int86(51,&i,&o);
+    i.x.ax=8;
+    i.x.cx=y1;
+    i.x.dx=y2;
+    int86(51,&i,&o);
+}
+int callmouse()
+
+{ i.x.ax=1;
+    int86(51,&i,&o);
+    return 1;
+}
+void getmousepos(int &xpos,int &ypos,int &cl)
+
+{ i.x.ax=3;
+    int86(51,&i,&o);
+    cl=o.x.bx;
+    xpos=o.x.cx;
+    ypos=o.x.dx;
+}
