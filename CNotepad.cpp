@@ -17,3 +17,34 @@ void intro();
 int input(char []);
 void restrictmouseptr(int ,int ,int ,int );
 int callmouse();
+class file
+
+{ public: char notes[150];
+    void write();
+    void read();
+};
+void file::write()
+
+{ outtextxy(80,85,"|");
+    gotoxy(12,6);
+    gets(notes);
+}
+void file::read()
+
+{ char array[2];
+    for(int i=0;notes[i]!=' ';i++)
+
+    {
+	array[0]=notes[i];
+	array[1]='\0';
+	outtextxy(ox,oy,array);
+	ox+=8;
+	if(ox>=380)
+
+	{
+	    ox=71;
+	    oy+=8;
+	}
+    }
+}
+
