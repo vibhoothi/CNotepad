@@ -167,6 +167,7 @@ void count_words( char name[20])
     cout<<lines;
     
 }
+
 void intro()
 {
     int gd=DETECT,gm;
@@ -245,6 +246,13 @@ void main()
 	    outtextxy(46,65,"NEW");
 	    outtextxy(46,76,"OPEN");
 	    outtextxy(46,86,"ADD");
+	}
+	if((x>=395 && x<=400)&&(y>=35 && y<=41)&&( cl==1) )
+
+	{
+	    cout<<"Y";
+	    delay(2000);
+	    exit(0);
 	}
 	if((x>=45&&x<=69)&&(y>=66&&y<=71)&&(cl==1)&&(flag==1))
 
