@@ -199,6 +199,23 @@ void main()
     while(1)
 
     {
+	fstream f;
+	getmousepos(x,y,cl);
+	gotoxy(5,8); //  cout<<"ntMouse Position is: X: "<<x<<" Y: "<<y; // cout<<"CLICK:"<<cl;
+	if((x>=45 && x<=78)&&(y>=49&&y<=56)&&(cl==1))
+
+	{ //pop up
+	    flag=1;
+	    cleardevice();  // system("CLS");
+	    n. draw();
+	    setfillstyle(SOLID_FILL,n.popup);
+	    delay(500);
+	    bar(45,60,110,99);
+	    rectangle(45,60,110,99);
+	    outtextxy(46,65,"NEW");
+	    outtextxy(46,76,"OPEN");
+	    outtextxy(46,86,"ADD");
+	}
 
   }
 
