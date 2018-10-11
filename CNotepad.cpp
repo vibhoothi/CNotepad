@@ -136,6 +136,56 @@ void getmousepos(int &xpos,int &ypos,int &cl)
     ypos=o.x.dx;
 }
 
+
+void intro()
+{
+    int gd=DETECT,gm;
+    int margin,top,bottom,right,left;
+    initgraph(&gd,&gm,"");
+    char str[300];
+    int i,j,location,n;
+    char ch;
+    strcpy(str,"          NOTEPAD++          ");
+    outtextxy(350,300,"PRESS ANY KEY");
+    for(i=0;i<10;i++)
+    {
+	setfillstyle(SOLID_FILL,BLACK);
+        bar(50,50,600,90);
+        settextstyle(3,HORIZ_DIR,4);
+        outtextxy(50,50,str);
+        setcolor(i);
+        delay(100);
+	ch = str[0];
+        n=strlen(str);
+        location=0;
+        for(j=location;j<n;j++)
+        {
+            str[j] = str[j+1];
+        }
+    }
+    str[n-1]=ch;
+    str[n]=NULL;
+    bar(230,150,350,268);
+    rectangle(230,150,380,268);
+    setcolor(CYAN);
+    circle(362,140,25);
+    settextstyle(2,HORIZ_DIR,4);
+    outtextxy(244,160,"C++ NOTEPAD");
+    delay(400);
+    outtextxy(244,172,"Developed by VIBHOOTHI ");
+    delay(400);
+    outtextxy(244,238,"LOADING");
+    int inx=294;
+    for( i=0;i<8;++i)
+    {
+        outtextxy(inx,238,".");
+        inx+=6;
+        delay(300);
+    }
+    outtextxy(244,250 ,"DONE");
+    getch();
+}
+
 void main()
 
 {
