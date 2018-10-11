@@ -216,6 +216,20 @@ void main()
 	    outtextxy(46,76,"OPEN");
 	    outtextxy(46,86,"ADD");
 	}
+	if((x>=121&&x<=155)&&(y>=51&&y<=57)&&(cl==1))
+
+	{
+	    flag=3;
+	    closegraph();
+	    system("CLS");
+	    n.draw();
+	    setfillstyle(SOLID_FILL,n.popup);
+	    bar(121,60,200,90);
+	    rectangle(121,60,200,90);
+	    outtextxy(121,63,"Developers");
+	    outtextxy(121,72,"About");
+	    outtextxy(121,81,"Bugs");
+	}
 	if((x>=121&&x<=199)&&(y>=63&&y<=68)&&(cl==1)&&(flag==3))
 
 	{
