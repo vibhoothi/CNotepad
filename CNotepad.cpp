@@ -48,3 +48,20 @@ void file::read()
     }
 }
 
+class notepad
+
+{
+    public:
+    int field;
+    int menu;
+    int outline;
+    int popup;
+    void draw();
+    notepad()
+
+    { field=15;
+	menu=4;
+	outline=3;
+	popup=6;
+    }
+};
