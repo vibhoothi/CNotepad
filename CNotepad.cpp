@@ -136,7 +136,37 @@ void getmousepos(int &xpos,int &ypos,int &cl)
     ypos=o.x.dx;
 }
 
+void count_words( char name[20])
 
+{ 
+    fstream f;
+    int count_word=1,letters=0,lines=0;
+    file s;
+    f.open(name,ios::binary|ios::in);
+    while( f.read((char*)&s,sizeof(s)));
+    // s.read();
+    for(int i=0;s.notes[i]!=' ';++i)
+    
+    {
+        if(s.notes[i]==' ')
+        ++count_word;
+        else if(s.notes[i]!=' '&&s.notes[i]!='.')
+        ++letters;
+        else if(s.notes[i]=='.')
+        ++lines;
+    }
+    f.close();
+    outtextxy(72,102,"Words :");
+    gotoxy(18,7);
+    cout<<count_word;
+    outtextxy(72,117,"Letters:");
+    gotoxy(18,8);
+    cout<<letters;
+    outtextxy(72,132,"Lines :");
+    gotoxy(18,9);
+    cout<<lines;
+    
+}
 void intro()
 {
     int gd=DETECT,gm;
@@ -215,6 +245,81 @@ void main()
 	    outtextxy(46,65,"NEW");
 	    outtextxy(46,76,"OPEN");
 	    outtextxy(46,86,"ADD");
+	}
+	if((x>=45&&x<=69)&&(y>=66&&y<=71)&&(cl==1)&&(flag==1))
+
+	{
+	    cleardevice(); // system("CLS");
+	    n.draw();
+	    char save;
+	    outtextxy(71,68,"Enter name of file: ");
+	    gotoxy(29 ,5);
+	    gets(name);
+	    strcat(name,".dat");
+	    f.open(name,ios::binary|ios::out);
+	    s.write();
+	    outtextxy(71,355,"Do you wish to save your file(Y/y)");
+	    gotoxy(45,23);
+	    cin>>save;
+	    if(save=='y'||save=='Y')
+
+	    {
+		f.write((char*)&s,sizeof(s));
+		outtextxy(71,375,"Your file has been saved");
+	    }
+	    f.close();
+	}
+	if((x>=45&&x<=76)&&(y>=76&&y<=83)&&(cl==1)&&(flag==1))
+
+	{
+	    closegraph();
+	    n. draw();
+	    outtextxy(71,68,"Enter name of file: ");
+	    gotoxy(28,5);
+	    gets(name);
+	    strcat(name,".dat");
+	    f.open(name,ios::binary|ios::in);
+	    ox=71;
+	    while(f.read((char*)&s,sizeof(s)))
+	    s.read();
+	}
+	if((x>=45&&x<=68)&&(y>=87&&y<=92)&&(cl==1)&&(flag==1))
+
+	{
+	    closegraph();
+	    n.draw();
+	    outtextxy(71,68,"Enter name of file: ");
+	    gotoxy(28,5);
+	    gets(name);
+	    strcat(name,".dat");
+	    f.open(name,ios::binary|ios::app);
+	    s.write() ;
+	    f.write((char*)&s,sizeof(s));
+	    f.close();
+	    outtextxy(71,375,"Done(0.08s)");
+	}
+	if((x>=85&&x<=114)&&(y>=50&&y<=58)&&(cl==1))
+
+	{
+	    flag=2;
+	    closegraph();
+	    system("CLS");
+	    n. draw();
+	    setfillstyle(SOLID_FILL,n.popup);
+	    bar(81,60,139,72);
+	    rectangle(81,60,139,72);
+	    outtextxy(82,62,"Details");
+	}
+	if((x>=83&&x<=135)&&(y>=63&&y<=69)&&(cl==1)&&(flag==2))
+
+	{
+	    closegraph();
+	    n.draw();
+	    outtextxy(71,68,"Enter name of file: ");
+	    gotoxy(28,5);
+	    gets(name);
+	    strcat(name,".dat");
+	    count_words(name);
 	}
 	if((x>=121&&x<=155)&&(y>=51&&y<=57)&&(cl==1))
 
