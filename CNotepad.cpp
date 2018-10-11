@@ -65,3 +65,47 @@ class notepad
 	popup=6;
     }
 };
+   void notepad:: draw()
+
+    {
+	int gd=DETECT,gm;
+	initgraph(&gd,&gm,"");
+	int margin,top,bottom,right,left;
+	restrictmouseptr(45,30,410,405);
+	callmouse();
+	margin=50;
+        left=margin;
+        top=margin;
+	bottom=400;
+        right=400;
+        setfillstyle(SOLID_FILL,field);
+        bar(left,top,right,bottom);
+        rectangle(left,top,right,bottom);
+        setcolor(BLACK);
+        setfillstyle(SOLID_FILL,outline);
+	//top bar
+        bar(45,30,410,50);
+        rectangle(45,30,410,50);
+        //left bar
+        bar(45,50,55,405);
+	rectangle(45,50,55,405);
+        //right bar
+        bar(400,49,410,405);
+        rectangle(400,49,410,405);
+        //bottom bar
+        bar(45,400,410,405);
+        rectangle(45,400,410,420);
+	setcolor(BLACK);
+        setfillstyle(SOLID_FILL,menu);
+        bar(45,47,410,60);
+        rectangle(45,47,410,60);
+        outtextxy(47,50,"File");
+	outtextxy(85,50,"Edit");
+	outtextxy(125,50,"Help");
+	outtextxy(165,50,"Mods");
+	outtextxy(52,35,"NOTEPAD++ ");
+	outtextxy(135,35,"Beta Mode");
+	outtextxy(395,35,"X");
+    }
+
+
